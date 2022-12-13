@@ -75,6 +75,10 @@ fun main() {
             mudarParametrosSujeira()
             main()
         }
+        else -> {
+            println("Opção Inválida, tente novamente")
+            main()
+        }
     }
 }
 

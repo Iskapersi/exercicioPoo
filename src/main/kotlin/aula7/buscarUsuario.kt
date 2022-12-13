@@ -5,8 +5,8 @@ import kotlin.random.Random
 data class Usuario (val nomeUsuario: String, val senha: String)
 
 sealed class ResultadoBuscaUsuario {
-    data class Sucesso (val usuarioBuscado: Usuario, val mensagem: String): ResultadoBuscaUsuario(){
-    }
+    data class Sucesso (val usuarioBuscado: Usuario, val mensagem: String): ResultadoBuscaUsuario()
+
     object Carregando : ResultadoBuscaUsuario()
     data class Falha (val erro: String) : ResultadoBuscaUsuario()
 
