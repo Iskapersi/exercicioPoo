@@ -34,14 +34,6 @@ fun main() {
 
     val senhaTexto = GeraSenhaAlfanumerica(8)
     println(senhaTexto.gerador())
-    println(senhaTexto.gerador())
-    println(senhaTexto.gerador())
-    println(senhaTexto.gerador())
-    println(senhaTexto.gerador())
-    println(senhaTexto.gerador())
-    println(senhaTexto.gerador())
-    println(senhaTexto.gerador())
-    println(senhaTexto.gerador())
 
 
 }
