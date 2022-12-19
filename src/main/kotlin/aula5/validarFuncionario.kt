@@ -7,9 +7,46 @@ data class Empresa(val nome: String, val listaFuncionarios: MutableList<Funciona
         listaFuncionarios.add(novoFuncionario)
     }
 
+//    fun mudarNome(){
+//        val item = listaFuncionarios[0]
+//        item.let {
+//            println("Digite o novo nome")
+//            val newName = readln()
+//            println("Digite o sobrenome")
+//            val newSobrenome = readln()
+//            val newCpf = it.cpf
+//            val newTelefone = it.telefone
+//            val newcargo = it.cargo
+//
+//            val itemEditado = Funcionario (nome = newName, sobrenome = newSobrenome, cpf = newCpf, telefone = newTelefone, cargo = newcargo)
+//            listaFuncionarios[0] = itemEditado
+//        }
+//    }
+
+    fun mudarNome(){
+        val item = listaFuncionarios[0]
+        item.let {
+            println("Digite o novo nome")
+            it.nome = readln()
+            println("Digite o novo Sobrenome")
+            it.sobrenome = readln()
+        }
+    }
+
+    fun seila(){
+        val seila = listaFuncionarios[0]
+        seila.let {
+            if (it.nome == "Jão"){
+                println("Não pode nome ruim!")
+            } else {
+                it.nome += "blz"
+            }
+        }
+    }
+
 }
 
-data class Funcionario(val nome: String, val sobrenome: String, val cpf: String, val telefone: String, val cargo: Cargo)
+data class Funcionario(var nome: String, var sobrenome: String, val cpf: String, val telefone: String, val cargo: Cargo)
 
 enum class Cargo(val salario: Double) {
     DESCONHECIDO(salario = 0.0),
@@ -19,7 +56,7 @@ enum class Cargo(val salario: Double) {
 }
 
 data class FormularioFuncionario(
-    val nome: String, val sobrenome: String, val cpf: String, val telefone: String, val cargo: Cargo
+    var nome: String, val sobrenome: String, val cpf: String, val telefone: String, val cargo: Cargo
 )
 
 private fun FormularioFuncionario.validaFormulario(): Funcionario? {
@@ -78,5 +115,14 @@ fun main() {
     }
     else
         println("(!) Um ou mais campos do formulário foram inseridos de forma inválida.")
+
+    empresa.mudarNome()
+
+    println(empresa.listaFuncionarios)
+
+    empresa.seila()
+
+    println(empresa.listaFuncionarios)
+
 
 }

@@ -78,6 +78,12 @@ open class Cliente(private val nome: String,
         senha = "s4e8f2!4f"
     )
 
+private val marquinhos = Cliente.Carteira(
+    nome = "Marquinhos",
+    sobrenome = "Delas",
+    senha = "s4e8f2!4f"
+)
+
 
 fun main() {
 
@@ -86,6 +92,9 @@ fun main() {
     jorginho.sacarDinheiro(15.0, "s4e8f2!4f")
     jorginho.pagarBoleto(37.0, "s4e8f2!4f")
     jorginho.imprimirExtrato()
+
+    marquinhos.adicionarFundos(50.0, "s4e8f2!4f")
+    marquinhos.imprimirExtrato()
 
 
 }

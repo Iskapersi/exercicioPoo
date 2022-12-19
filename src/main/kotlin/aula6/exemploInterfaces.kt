@@ -60,6 +60,7 @@ class CarroEletrico():MotorEletrico{
 }
 
 fun main() {
-    val elet = CarroEletrico()
+    var elet = CarroEletrico()
     elet.descricaoBateria()
+
 }
